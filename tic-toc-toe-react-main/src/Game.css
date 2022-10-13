@@ -1,0 +1,165 @@
+.nav_main{
+    padding: 5px 60px;
+    background-color: var(--primary-pink-light);
+    position: sticky;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav_main img{
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.nav_main svg{
+    font-size: 1.8rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.game_input_section{
+    margin:10px auto;
+    padding: 20px 0px;
+    width: 100%;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: loginopen 0.30s linear;
+}
+.game_player_nav{
+    padding: 10px;
+    width: 100%;
+}
+.player_name , .player_active{
+    border-radius: 12px;
+    padding: 5px 20px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--primary-pink-light);
+    transition: 0.40s ease-in-out;
+}
+.player_active{
+    background-color: var(--primary-pink-mid-light);
+    color: white;
+}
+
+.main_container_input{
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game_input_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 1px;
+    background: transparent;
+}
+.game_input_container p{
+    border-radius: 12px;
+    margin: 5px;
+    box-shadow: 1px 5px 10px var(--box-shadow-red),
+                5px 1px 10px var(--box-shadow-red);
+    display: grid;
+    place-items: center;
+    width: 40%;
+    aspect-ratio: 1/1;
+    font-weight: bold;
+    font-size: 4rem;
+}
+.vh{
+    height: 30px;
+    visibility: hidden;
+}
+.game_input_section button , .winner_modal_section button{
+    padding: 8px 30px 4px 30px;
+    background-color: var(--primary-pink-mid-light);
+}
+.game_input_section button:hover ,.winner_modal_section button:hover , .main_alert_container div button:hover{
+    background-color: var(--primary-pink);
+}
+    @media (max-width:750px){
+        .nav_main{
+            padding: 10px 20px;
+        }
+        .game_input_container p{
+            font-size: calc(7vw + 1rem);
+        }
+    }
+    /* modal for winner  */
+
+    .winner_modal_section{
+        border-radius: 5px;
+        padding: 20px;
+        background-color: white;
+        width: 70%;
+        max-width: 400px;
+        text-align: center;
+        animation: loginopen 0.25s linear;
+    }
+    .winner_modal_section p:first-child{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .winner_modal_section p{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+     /* modal in setting  */
+    
+    .modal_setting{
+        display: grid;
+        place-items: center;
+    }
+    .setting_container{
+        border-radius: 5px;
+        padding: 20px;
+        background-color: white;
+        width: 70%;
+        max-width: 400px;
+    }
+    .setting_container button{
+        color: var(--primary-pink);
+
+    }
+    .setting_container button:last-child{
+        border: 2px solid var(--primary-pink);
+    }
+
+    .main_alert_container{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        background-color: rgba(0, 0, 0, 0.342);
+        backdrop-filter: blur(3px);
+        transition: 0.30s ease;
+        transform: scale(1);
+    }
+    .main_alert_container div{
+        padding: 20px;
+        border-radius: 7px;
+        background-color: white;
+        animation: loginopen 0.20s linear;
+    }
+    .main_alert_container div button{
+        padding: 5px 25px 3px 25px;
+    background-color: var(--primary-pink-mid-light);
+    }
+    .main_alert_container div p{
+        font-weight: 600;
+
+    }

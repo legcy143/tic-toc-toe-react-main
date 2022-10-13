@@ -1,0 +1,25 @@
+.d_flex {display: flex;}
+.fd_r{flex-direction: row;}
+.fd_c{flex-direction: column;}
+.ai_c {align-items: center;}
+.ai_fs {align-items: flex-start;}
+.ai_fe {align-items: flex-end;}
+.jc_c {justify-content: center;}
+.jc_sb {justify-content: space-between;}
+.jc_sa {justify-content: space-around;}
+.jc_se {justify-content: space-evenly;}
+.d_grid {display: grid;}
+.pi_c {place-items: center;}
+.pc_c {place-content: center}
+.d_block {display: block;}
+/* //margin_padding */
+.m_auto{margin: auto;}
+/* //// pointer */
+.c_d {cursor: default;}
+.c_p {cursor: pointer;}
+.pe_n {pointer-events: none;}
+
+
+
+/* /// gaps */
+.gap_1 {gap: 1px;}.gap_2 {gap: 2px;}.gap_3 {gap: 3px;}.gap_4 {gap: 4px;}.gap_5 {gap: 5px;}.gap_6 { gap: 6px;}.gap_7 {gap: 7px;}.gap_8 { gap: 8px;}.gap_9 { gap: 9px;}.gap_10 {gap: 10px;}.gap_11 {gap: 11px;}.gap_12 {gap: 12px;}.gap_13 {gap: 13px;}.gap_14 { gap: 14px;}.gap_16 {gap: 16px;}.gap_17 {gap: 17px;}.gap_18 {gap: 18px;}.gap_19 {gap: 19px;}.gap_20 {gap: 20px;}.gap_21 {gap: 21px;}.gap_22 {gap: 22px;}.gap_23 {gap: 23px;}.gap_24 {gap: 24px;}.gap_25 {gap: 25px;}.gap_26 {gap: 26px;}.gap_27 {gap: 27px;}.gap_28 {gap: 28px;}.gap_29 {gap: 29px;}.gap_30 {gap: 30px;}
