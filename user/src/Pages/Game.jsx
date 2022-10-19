@@ -2,34 +2,41 @@ import { Button } from '@mui/material'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import React, { useState , useEffect} from 'react'
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import Navbar from "../Component/Navbar"
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 function Game() {
+  let params = useParams()
   const [resetgamemodal , setresetgamemodal] = useState(false)
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
-    const handleClose = () =>{ setOpen(false);resetgameopen();}
+    const handleClose = () =>{ setOpen(false);}
 
   const [logapi, setlogapi] = useState(true)
-  const [winnerdiv, setwinnerdiv] = useState(true)
+  // const [winnerdiv, setwinnerdiv] = useState(true)
   const [winnerplayer, setwinnerplayer] = useState(" ")
 
   const [playerx, setplayerx] = useState("player_active")
   const [playero, setplayero] = useState("")
 
+  // states for inputs
   const [x1, setx1] = useState(null);const [x2, setx2] = useState(null);
   const [x3, setx3] = useState(null);const [x4, setx4] = useState(null);
   const [x5, setx5] = useState(null);const [x6, setx6] = useState(null);
   const [x7, setx7] = useState(null);const [x8, setx8] = useState(null);
   const [x9, setx9] = useState(null);
+  const inptarr= [x1,x2,x3,x4,x5,x6,x7,x8]
 
-  const player1_name = "PLAYER X"
-  const player2_name = "PLAYER O"
+  // players name
+  const player1_name = params.user1
+  const player2_name =  params.user2
+  
 
   // arrya 
   const arr = []
+
+  // input fillings 
   const handlex1 = () => { x1 === null?arr.length % 2 === 0 ? setx1("X") : setx1("O") : x1 === null };
   const handlex2 = () => { x2 === null?arr.length % 2 === 0 ? setx2("X") : setx2("O") : x2 === null };
   const handlex3 = () => { x3 === null?arr.length % 2 === 0 ? setx3("X") : setx3("O") : x3 === null };
@@ -49,7 +56,7 @@ function Game() {
   const resetgame = () => {
     setx1(null);setx2(null);setx3(null);setx4(null);setx5(null);setx6(null);
     setx7(null);setx8(null);setx9(null);
-    alert("Restart game")
+    // alert("Restart game")
     setOpen(false)
     setresetgamemodal(false)
   }
@@ -57,8 +64,17 @@ function Game() {
 
 
   //// check function 
-  const check = () => {
 useEffect(() => {
+  {x1 === null ? false : arr.push(x1)}
+  {x2 === null ? false : arr.push(x2)}
+  {x3 === null ? false : arr.push(x3)}
+  {x4 === null ? false : arr.push(x4)}
+  {x5 === null ? false : arr.push(x5)}
+  {x6 === null ? false : arr.push(x6)}
+  {x7 === null ? false : arr.push(x7)}
+  {x8 === null ? false : arr.push(x8)}
+  {x9 === null ? false : arr.push(x9)}
+  
     if (arr.length %2 === 0) {
       setplayerx("player_active")
       setplayero("")
@@ -95,16 +111,8 @@ const checkwinner = (para1 , para2 , para3)=>{
     checkwinner(k3 , k6 , k9);
     checkwinner(k1 , k5 , k9);
     checkwinner(k3 , k5 , k7);
-    // if (k4 != null && k5 != null && k6 != null) {
-    //   if (k4 == k5 && k5 == k6 && k4 == k6) {
-    //     // console.log(k4, k5, k6, true ,"456")
-    //     {k4 === "X"?setwinnerplayer("PLAYER X"):setwinnerplayer("PLAYER O")}
-    //   }
-    // }
+  }, [inptarr])
 
-  }, [check])
-
-  }
   return (
     <main>
       {logapi===true?
@@ -112,8 +120,8 @@ const checkwinner = (para1 , para2 , para3)=>{
         <Navbar />
       <section className='game_input_section'>
         <div className='game_player_nav d_flex ai_c jc_sb'>
-          <h1 className={` player_name ${playerx} `}>Player X</h1>
-          <h1 className={`player_name ${playero}`}>Player O</h1>
+          <h1 className={` player_name ${playerx} `}>{player1_name}</h1>
+          <h1 className={`player_name ${playero}`}>{player2_name}</h1>
         </div>
         <main className='main_container_input'>
         <div className='game_input_container'>
@@ -133,7 +141,7 @@ const checkwinner = (para1 , para2 , para3)=>{
         </div>  
         </main>
         <div className='vh'>
-          {x1 === null ? false : arr.push(x1)}
+          {/* {x1 === null ? false : arr.push(x1)}
           {x2 === null ? false : arr.push(x2)}
           {x3 === null ? false : arr.push(x3)}
           {x4 === null ? false : arr.push(x4)}
@@ -141,8 +149,7 @@ const checkwinner = (para1 , para2 , para3)=>{
           {x6 === null ? false : arr.push(x6)}
           {x7 === null ? false : arr.push(x7)}
           {x8 === null ? false : arr.push(x8)}
-          {x9 === null ? false : arr.push(x9)}
-          {check()}
+          {x9 === null ? false : arr.push(x9)} */}
         </div>
 
         {/* ///////modal  */}

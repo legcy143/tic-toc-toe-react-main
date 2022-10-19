@@ -36,6 +36,8 @@ className="modal_setting"
 <Link to="/login">
 <Button variant='outlined'  startIcon={<LogoutIcon />}>logout</Button>
 </Link>
+<br /><br />
+<small>version : 2.0.1</small>
 </section>
 
 </Modal>

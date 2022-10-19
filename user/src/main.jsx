@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route index element={<App/>}/>
     <Route exact path='/' element={ <App/> } />
     <Route exact path='/login' element={ <Login/> } />
-    <Route exact path='/game' element={ <Game/> } />
+    <Route exact path='/game/:user1/:user2' element={ <Game/> } />
     <Route exact path='/feedback' element={ <Feedback /> } />
     <Route path="*" element={<h1>page not found</h1>}/> 
   </Routes>

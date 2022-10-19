@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: center;
     animation: loginopen 0.30s linear;
+
 }
 .game_player_nav{
     padding: 10px;
@@ -76,6 +77,8 @@
     aspect-ratio: 1/1;
     font-weight: bold;
     font-size: 4rem;
+    text-align: center;
+    border: none;
 }
 .vh{
     height: 30px;
